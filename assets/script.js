@@ -36,3 +36,5 @@ var createAppointment = function(appointmentText, hourDiv) {
         .text(appointmentText)
     appointmentDiv.html(appointmentP)
 }
+
+var auditAppointment
