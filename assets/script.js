@@ -37,4 +37,23 @@ var createAppointment = function(appointmentText, hourDiv) {
     appointmentDiv.html(appointmentP)
 }
 
-var auditAppointment
+var auditAppointment = function() {
+    /* update the background of each row based on the time of day */
+
+    var currentHour = moment().hour();
+    $(".appointment-info").each( function() {
+        var elementHour = parseInt($(this).attr("id"))
+
+        // handle past, present, and future
+        if ( elementHour < currentHour ) {
+            $(this).removeClass(["present", "future"]).addClass("past")
+        }
+        else if ( elementHour === currentHour ) {
+            $(this).removeClass(["past", "future"]).addClass("present")
+        }
+        else {
+            $(this).removeClass(["past", "present"]).addClass("future")
+        }
+    })
+}
+
