@@ -57,3 +57,16 @@ var auditAppointment = function() {
     })
 }
 
+var replaceTextArea = function(textAreaElement) {
+    var appointmentInfo = textAreaElement.closest("appointment-info")
+    var textArea = appointmentInfo.find("textArea")
+
+    var time = appointmentInfo.attr("id")
+    var text = textArea.val().trim()
+
+    appointment[time] = [text]
+    setAppointment()
+
+    
+
+}
