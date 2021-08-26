@@ -74,24 +74,24 @@ $(".appointment").click(function() {
     replaceTextArea($(this))
 })
 
-var time = $(this).closest(".appointment-info").attr("id");
+var time = $(this).closest(".appointment-info").attr("id")
     if (parseInt(time) >= moment().hour()) {
 
         // create a textInput element that includes the current task
-        var text = $(this).text();
+        var text = $(this).text()
         var textInput = $("<textarea>")
             .addClass("form-control")
-            .val(text);
+            .val(text)
 
         // add the textInput element to the parent div
-        $(this).html(textInput);
-        textInput.trigger("focus");
+        $(this).html(textInput)
+        textInput.trigger("focus")
     }
 })
 
 // save button click handler
 $(".saveBtn").click(function() {
-    replaceTextarea($(this));
+    replaceTextarea($(this))
 })
 
 // update task backgrounds on the hour
@@ -103,4 +103,3 @@ setTimeout(function() {
 // get the tasks from localStorage on load.
 getTasks()
 
-}

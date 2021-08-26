@@ -1,4 +1,4 @@
 # Workday Scheduler
 
-##  Daily lanner to help schedule your day
+##  Daily planner to help schedule your day
 
