@@ -67,6 +67,40 @@ var replaceTextArea = function(textAreaElement) {
     appointment[time] = [text]
     setAppointment()
 
-    
+    createAppointment(text, appointmentInfo)
+}
+
+$(".appointment").click(function() {
+    replaceTextArea($(this))
+})
+
+var time = $(this).closest(".appointment-info").attr("id");
+    if (parseInt(time) >= moment().hour()) {
+
+        // create a textInput element that includes the current task
+        var text = $(this).text();
+        var textInput = $("<textarea>")
+            .addClass("form-control")
+            .val(text);
+
+        // add the textInput element to the parent div
+        $(this).html(textInput);
+        textInput.trigger("focus");
+    }
+})
+
+// save button click handler
+$(".saveBtn").click(function() {
+    replaceTextarea($(this));
+})
+
+// update task backgrounds on the hour
+timeToHour = 3600000 - today.milliseconds()  // check how much time is left until the next hour
+setTimeout(function() {
+    setInterval(auditTasks, 3600000)
+}, timeToHour);
+
+// get the tasks from localStorage on load.
+getTasks()
 
 }
