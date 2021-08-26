@@ -87,7 +87,7 @@ var time = $(this).closest(".appointment-info").attr("id")
         $(this).html(textInput)
         textInput.trigger("focus")
     }
-})
+
 
 // save button click handler
 $(".saveBtn").click(function() {
@@ -98,7 +98,7 @@ $(".saveBtn").click(function() {
 timeToHour = 3600000 - today.milliseconds()  // check how much time is left until the next hour
 setTimeout(function() {
     setInterval(auditTasks, 3600000)
-}, timeToHour);
+}, timeToHour)
 
 // get the tasks from localStorage on load.
 getTasks()
