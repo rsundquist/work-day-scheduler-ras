@@ -60,16 +60,16 @@ var auditAppointment = function() {
 
 var replaceTextArea = function(textAreaElement) {
     timeBlock = textAreaElement.closest("timeBlock")
-    var textArea = appointmentInfo.find("textArea")
+    var textArea = timeBlock.find("textArea")
 
-    var time = time-block.attr("id")
+    var time = timeBlock.attr("id")
     var text = textArea.val()
-    console.log(text)
+    //console.log(text)
 
     appointment[time] = [text]
     //setAppointment()
 
-    createAppointment(text, appointmentInfo)
+    createAppointment(text, timeBlock)
 }
 
 $(".appointment").click(function() {
