@@ -1,5 +1,5 @@
 var today = moment()
-$("#currentDay").text(today.format("dddd, MMMM, Do, YYYY"))
+$("#currentDay").text(today.format("dddd, MMMM, Do, YYYY, h:mm a"))
 
 var appointment = {
     "nine": [],
@@ -36,7 +36,6 @@ var createAppointment = function(appointmentText, hourDiv) {
 
 var auditAppointment = function() {
     /* update the background of each row based on the time of day */
-
     var currentHour = moment().hour();
     $(".timeBlock").each( function() {
         var elementHour = parseInt($(this).attr("id"))
