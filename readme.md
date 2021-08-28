@@ -2,4 +2,10 @@
 
 ##  Daily planner to help schedule your day
 
-![Screenshot]
+
+
+
+
+
+
+![Screenshot](assets\images\workday-scheduler-screenshot.png "Workday Scheduler")
