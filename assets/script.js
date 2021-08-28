@@ -13,10 +13,11 @@ var appointment = {
     "five": []
 }  
 
-var setAppointment = function() {
-    localStorage.setItem("appointment", JSON.stringify("appointment"))
-}
-
+//var txtArea = $("#description").val()
+//var setAppointment = function() {
+    //localStorage.setItem("appointment", JSON.stringify(txtArea))
+//}
+var timeBlock
 var getAppointment = function() {
     var enteredAppointment = JSON.parse(localStorage.getItem("appointment"))
     if (enteredAppointment) {
@@ -41,7 +42,7 @@ var auditAppointment = function() {
     /* update the background of each row based on the time of day */
 
     var currentHour = moment().hour();
-    $(".appointment-info").each( function() {
+    $(".timeBlock").each( function() {
         var elementHour = parseInt($(this).attr("id"))
 
         // handle past, present, and future
@@ -58,19 +59,21 @@ var auditAppointment = function() {
 }
 
 var replaceTextArea = function(textAreaElement) {
-    var appointmentInfo = textAreaElement.closest("appointment-info")
+    timeBlock = textAreaElement.closest("timeBlock")
     var textArea = appointmentInfo.find("textArea")
 
-    var time = appointmentInfo.attr("id")
-    var text = textArea.val().trim()
+    var time = time-block.attr("id")
+    var text = textArea.val()
+    console.log(text)
 
     appointment[time] = [text]
-    setAppointment()
+    //setAppointment()
 
     createAppointment(text, appointmentInfo)
 }
 
 $(".appointment").click(function() {
+    
     replaceTextArea($(this))
 })
 
@@ -91,7 +94,13 @@ var time = $(this).closest(".appointment-info").attr("id")
 
 // save button click handler
 $(".saveBtn").click(function() {
-    replaceTextarea($(this))
+    var text = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, text)
+    //setAppointment()
+    //var txtArea = $(".description").val()
+    //console.log("DATA: ", txtArea)
+    replaceTextArea($(this))
 })
 
 // update task backgrounds on the hour
@@ -101,5 +110,6 @@ setTimeout(function() {
 }, timeToHour)
 
 // get the tasks from localStorage on load.
-getTasks()
+getAppointment()
+//console.log(getAppointment)
 
