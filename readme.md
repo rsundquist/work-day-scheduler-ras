@@ -11,4 +11,4 @@
 
 
 
-![Screenshot](assets\images\workday-scheduler-screenshot.png?raw=true "Workday Scheduler")
+![Screenshot](assets\images\workday-scheduler-screenshot.png?raw=true&sanitize=true "Workday Scheduler")
