@@ -13,10 +13,6 @@ var appointment = {
     "five": []
 }  
 
-//var txtArea = $("#description").val()
-//var setAppointment = function() {
-    //localStorage.setItem("appointment", JSON.stringify(txtArea))
-//}
 var timeBlock
 var getAppointment = function() {
     var enteredAppointment = JSON.parse(localStorage.getItem("appointment"))
@@ -97,9 +93,6 @@ $(".saveBtn").click(function() {
     var text = $(this).siblings(".description").val();
     var time = $(this).parent().attr("id");
     localStorage.setItem(time, text)
-    //setAppointment()
-    //var txtArea = $(".description").val()
-    //console.log("DATA: ", txtArea)
     replaceTextArea($(this))
 })
 
@@ -111,5 +104,5 @@ setTimeout(function() {
 
 // get the tasks from localStorage on load.
 getAppointment()
-//console.log(getAppointment)
+
 
