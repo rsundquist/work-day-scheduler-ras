@@ -1,5 +1,5 @@
 var today = moment()
-$("#currentDay").text(today.format("dddd, MMMM, Do, YYYY, h:mm a"))
+$("#currentDay").text(today.format("dddd, MMMM, Do, YYYY h:mm a"))
 
 var appointment = {
     "nine": [],
@@ -37,18 +37,23 @@ var createAppointment = function(appointmentText, hourDiv) {
 var auditAppointment = function() {
     /* update the background of each row based on the time of day */
     var currentHour = moment().hour();
+    console.log("current hour",currentHour)
     $(".timeBlock").each( function() {
-        var elementHour = parseInt($(this).attr("id"))
+        var elementHour = parseInt($(this).attr("id").split("-")[1])
+        console.log("element hour",elementHour)
 
         // handle past, present, and future
         if ( elementHour < currentHour ) {
-            $(this).removeClass(["present", "future"]).addClass("past")
+            $(this).addClass("past")
         }
         else if ( elementHour === currentHour ) {
-            $(this).removeClass(["past", "future"]).addClass("present")
+            $(this).removeClass("past")
+            $(this).addClass("present")
         }
         else {
-            $(this).removeClass(["past", "present"]).addClass("future")
+            $(this).removeClass("past")
+            $(this).removeClass("present")
+            $(this).addClass("future")
         }
     })
 }

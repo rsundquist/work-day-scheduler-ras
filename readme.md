@@ -10,4 +10,4 @@
 
 
 
-!['Screenshot'](assets\images\workday-scheduler-screenshot.png "Workday Scheduler")
+!['Screenshot'](images\workday-scheduler-screenshot.png "Workday Scheduler")
