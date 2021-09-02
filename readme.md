@@ -10,4 +10,4 @@
 
 
 
-![](images\workday-scheduler-screenshot.png)
+![](images\workday-scheduler-screenshot.png?raw=true)
