@@ -2,7 +2,7 @@
 
 ##  Daily planner to help schedule your day
 
-###  Here ia a link to Github Repository:
+###  Here is the link to the Github Repository:
  - https://github.com/rsundquist/work-day-scheduler-ras.git
 
 ###  Here is the link for the application:
